@@ -36,5 +36,4 @@ Please make sure to update tests as appropriate.
 
 ## Roadmap
 
-1. Make Chrome profile stuff configurable
-2. Share Windows Task Scheduler config
+1. Share Windows Task Scheduler config

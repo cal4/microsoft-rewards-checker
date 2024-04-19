@@ -9,10 +9,8 @@ from selenium.webdriver.common.by import By
 class TestVerifyallsearchesdone:
     def setup_method(self, method):
         options = Options()
-        options.add_argument(
-            "user-data-dir=C:\\Users\\cal\\AppData\\Local\\Google\\Chrome\\User Data"  # todo make configurable
-        )
-        options.add_argument("profile-directory=Profile 3")  # todo make configurable
+        options.add_argument(f"user-data-dir={os.getenv('USER_DATA_DIR')}")
+        options.add_argument(f"profile-directory={os.getenv('PROFILE_DIRECTORY')}")
         options.add_argument("--headless=new")
 
         self.driver = webdriver.Chrome(options)
