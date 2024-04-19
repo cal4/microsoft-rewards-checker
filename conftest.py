@@ -25,5 +25,5 @@ def pytest_sessionfinish(session, exitstatus):
 
     context = ssl.create_default_context()
     with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
-        server.login(sender_email, os.getenv('PASSWORD'))
+        server.login(sender_email, os.getenv("PASSWORD"))
         server.send_message(email_message)

@@ -12,6 +12,8 @@ pip install -r requirements.txt
 
 Copy .template.env to a new file named .env and fill out with your information. Gmail is the only tested SMTP currently,
 see [this](https://www.gmass.co/blog/gmail-smtp/) for how to set up.
+You'll need a Chrome profile with your Bing account logged-in.
+It may be useful to create a new one.
 
 ## Usage
 
@@ -35,5 +37,4 @@ Please make sure to update tests as appropriate.
 ## Roadmap
 
 1. Make Chrome profile stuff configurable
-2. Make point targets configurable
-3. Share Windows Task Scheduler config
+2. Share Windows Task Scheduler config
