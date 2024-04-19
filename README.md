@@ -10,7 +10,8 @@ Install the requirements.
 pip install -r requirements.txt
 ```
 
-Copy [.template.env](.template.env) to a new file named [.env](.env) and fill out with your information.
+Create an `.env` file by copying [.template.env](.template.env) to a new file named `.env` and fill out with your
+information.
 Gmail is the only tested SMTP currently, see [this](https://www.gmass.co/blog/gmail-smtp/) for how to set up.
 You'll need a Chrome profile with your Bing account logged-in.
 It may be useful to create a new one.
