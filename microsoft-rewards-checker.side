@@ -1,0 +1,78 @@
+{
+  "id": "11258dd2-8aff-4ccf-99b6-13390cca9460",
+  "version": "2.0",
+  "name": "microsoft-rewards-checker",
+  "url": "https://rewards.bing.com",
+  "tests": [{
+    "id": "a6920ffb-361d-4907-8054-5730becf9fd2",
+    "name": "verify all searches done",
+    "commands": [{
+      "id": "25ad80ed-d5b0-4e6c-8f24-7b2d4d3e2039",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8a05552e-770d-47be-8359-4e7be25cf461",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1368x816",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9f4d458a-371d-490b-be7c-85d307a1733c",
+      "comment": "",
+      "command": "click",
+      "target": "css=#dailypointColumnCalltoAction ng-transclude",
+      "targets": [
+        ["css=#dailypointColumnCalltoAction ng-transclude", "css:finder"],
+        ["xpath=//a[@id='dailypointColumnCalltoAction']/span/ng-transclude", "xpath:idRelative"],
+        ["xpath=//mee-rewards-user-status-banner-dailypoint/div/div/div/div/div/a/span/ng-transclude", "xpath:position"],
+        ["xpath=//ng-transclude[contains(.,'Points breakdown')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "76b22452-03ba-47eb-bbd2-1320e8f96421",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=.pointsBreakdownCard:nth-child(1) .pointsDetail .pointsDetail",
+      "targets": [
+        ["css=.pointsBreakdownCard:nth-child(1) .pointsDetail .pointsDetail", "css:finder"],
+        ["xpath=//div[@id='userPointsBreakdown']/div/div[2]/div/div/div/div[2]/mee-rewards-user-points-details/div/div/div/div/p[2]", "xpath:idRelative"],
+        ["xpath=//mee-rewards-user-points-details/div/div/div/div/p[2]", "xpath:position"],
+        ["xpath=//p[contains(.,'150 / 150')]", "xpath:innerText"]
+      ],
+      "value": "150 / 150"
+    }, {
+      "id": "c7c831b8-16ec-4126-9fa9-23bf7edfedf8",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=.pointsBreakdownCard:nth-child(2) .pointsDetail .pointsDetail",
+      "targets": [
+        ["css=.pointsBreakdownCard:nth-child(2) .pointsDetail .pointsDetail", "css:finder"],
+        ["xpath=//div[@id='userPointsBreakdown']/div/div[2]/div/div[2]/div/div[2]/mee-rewards-user-points-details/div/div/div/div/p[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div[2]/mee-rewards-user-points-details/div/div/div/div/p[2]", "xpath:position"],
+        ["xpath=//p[contains(.,'100 / 100')]", "xpath:innerText"]
+      ],
+      "value": "100 / 100"
+    }, {
+      "id": "82ed1113-a8e6-4cd1-9041-cba689f3464b",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "cf8420f8-7a42-4c66-b34a-c7f09b00b723",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["a6920ffb-361d-4907-8054-5730becf9fd2"]
+  }],
+  "urls": ["https://rewards.bing.com/"],
+  "plugins": []
+}
