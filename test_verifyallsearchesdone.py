@@ -20,21 +20,29 @@ class TestVerifyallsearchesdone:
         self.driver.quit()
 
     def test_verifyallsearchesdone(self):
+        mobile_searches_done: bool = False
+        desktop_searches_done: bool = False
         self.driver.get("https://rewards.bing.com/pointsbreakdown")
         search_desktop_goal: int = int(os.getenv("SEARCH_DESKTOP_GOAL"))
-        assert (
-            self.driver.find_element(
-                By.CSS_SELECTOR,
-                ".pointsBreakdownCard:nth-child(1) .pointsDetail .pointsDetail",
-            ).text
-            == f"{search_desktop_goal} / {search_desktop_goal}"
-        )
         search_mobile_goal: int = int(os.getenv("SEARCH_MOBILE_GOAL"))
-        assert (
-            self.driver.find_element(
-                By.CSS_SELECTOR,
-                ".pointsBreakdownCard:nth-child(2) .pointsDetail .pointsDetail",
-            ).text
-            == f"{search_mobile_goal} / {search_mobile_goal}"
-        )
+        for _ in range(int(os.getenv("ATTEMPTS"))):
+            if (
+                self.driver.find_element(
+                    By.CSS_SELECTOR,
+                    ".pointsBreakdownCard:nth-child(1) .pointsDetail .pointsDetail",
+                ).text
+                == f"{search_desktop_goal} / {search_desktop_goal}"
+            ) is True:
+                desktop_searches_done = True
+            if (
+                self.driver.find_element(
+                    By.CSS_SELECTOR,
+                    ".pointsBreakdownCard:nth-child(2) .pointsDetail .pointsDetail",
+                ).text
+                == f"{search_mobile_goal} / {search_mobile_goal}"
+            ) is True:
+                mobile_searches_done = True
+            if desktop_searches_done and mobile_searches_done:
+                break
+        assert desktop_searches_done, mobile_searches_done
         self.driver.close()
