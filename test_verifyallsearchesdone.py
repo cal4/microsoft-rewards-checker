@@ -44,5 +44,6 @@ class TestVerifyallsearchesdone:
                 mobile_searches_done = True
             if desktop_searches_done and mobile_searches_done:
                 break
-        assert desktop_searches_done, mobile_searches_done
+        assert desktop_searches_done, "Desktop searches not done"
+        assert mobile_searches_done, "Mobile searches not done"
         self.driver.close()
